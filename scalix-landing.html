@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scalix — Marketing Digital que Escala</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:        #0e0e0f;
+  --bg-2:      #141416;
+  --bg-3:      #1a1a1e;
+  --bg-4:      #212127;
+  --border:    rgba(255,255,255,0.07);
+  --border-2:  rgba(255,255,255,0.12);
+  --text-1:    #f2f2f0;
+  --text-2:    #9a9a96;
+  --text-3:    #5a5a58;
+  --blue:      #2f6ef5;
+  --blue-dim:  rgba(47,110,245,0.12);
+  --blue-mid:  rgba(47,110,245,0.25);
+  --accent:    #c8d4f5;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+
+body {
+  font-family: 'Geist', sans-serif;
+  background: var(--bg);
+  color: var(--text-1);
+  overflow-x: hidden;
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── UTILS ── */
+.label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-bottom: 14px;
+}
+
+.serif { font-family: 'Instrument Serif', serif; }
+
+h1,h2,h3,h4 { line-height: 1.1; letter-spacing: -0.02em; font-weight: 500; }
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6%;
+  background: rgba(14,14,15,0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  font-family: 'Geist', sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  color: var(--text-1);
+  text-decoration: none;
+}
+
+.logo-dot { color: var(--blue); }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--text-2);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 400;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--text-1); }
+
+.nav-btn {
+  background: var(--blue) !important;
+  color: #fff !important;
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  transition: opacity 0.2s !important;
+}
+
+.nav-btn:hover { opacity: 0.88; }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 100px 6% 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-line {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--blue) 40%, var(--blue) 60%, transparent 100%);
+  opacity: 0.3;
+}
+
+/* subtle dot grid */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: radial-gradient(ellipse 70% 70% at 50% 40%, black 0%, transparent 100%);
+  pointer-events: none;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 780px;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-3);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+
+.hero-eyebrow::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--blue);
+}
+
+h1 {
+  font-size: clamp(46px, 6vw, 80px);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  color: var(--text-1);
+  margin-bottom: 24px;
+}
+
+h1 em {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  color: var(--accent);
+}
+
+.hero-sub {
+  font-size: 17px;
+  color: var(--text-2);
+  font-weight: 300;
+  line-height: 1.7;
+  max-width: 520px;
+  margin-bottom: 44px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 26px;
+  border-radius: 7px;
+  font-family: 'Geist', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background: var(--blue);
+  color: #fff;
+}
+.btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--text-1);
+  border: 1px solid var(--border-2);
+}
+.btn-outline:hover { border-color: rgba(255,255,255,0.25); background: rgba(255,255,255,0.03); }
+
+.btn-wa {
+  background: #1a3a28;
+  color: #4ade80;
+  border: 1px solid rgba(74,222,128,0.2);
+}
+.btn-wa:hover { background: #1f4530; }
+
+.hero-metrics {
+  display: flex;
+  gap: 48px;
+  margin-top: 64px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border);
+}
+
+.metric-val {
+  font-size: 30px;
+  font-family: 'Instrument Serif', serif;
+  color: var(--text-1);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.metric-label {
+  font-size: 12px;
+  color: var(--text-3);
+  font-weight: 400;
+}
+
+/* ── SECTION SHELL ── */
+section { padding: 96px 6%; }
+.section-head { margin-bottom: 56px; }
+.section-head h2 {
+  font-size: clamp(30px, 3.5vw, 46px);
+  font-weight: 400;
+  color: var(--text-1);
+  margin-bottom: 14px;
+}
+.section-head p {
+  font-size: 16px;
+  color: var(--text-2);
+  font-weight: 300;
+  max-width: 480px;
+  line-height: 1.7;
+}
+
+/* ── SERVICES ── */
+.services { background: var(--bg-2); }
+
+.service-tabs {
+  display: flex;
+  gap: 2px;
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 4px;
+  margin-bottom: 40px;
+  width: fit-content;
+  flex-wrap: wrap;
+}
+
+.stab {
+  padding: 9px 20px;
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-2);
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+  background: transparent;
+  font-family: 'Geist', sans-serif;
+  white-space: nowrap;
+}
+
+.stab.active {
+  background: var(--bg-4);
+  color: var(--text-1);
+  border: 1px solid var(--border-2);
+}
+
+.stab:not(.active):hover { color: var(--text-1); }
+
+.service-panel { display: none; }
+.service-panel.active { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; }
+
+.service-detail {
+  background: var(--bg-3);
+  padding: 40px;
+  border: 1px solid var(--border);
+}
+
+.service-detail:first-child { border-radius: 12px 0 0 12px; }
+.service-detail:last-child  { border-radius: 0 12px 12px 0; }
+
+/* single-service panels */
+.service-panel.single { grid-template-columns: 1fr; }
+.service-panel.single .service-detail { border-radius: 12px; }
+
+.service-detail h3 {
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--text-1);
+  margin-bottom: 10px;
+}
+
+.service-detail .tagline {
+  font-size: 13px;
+  color: var(--blue);
+  font-weight: 500;
+  margin-bottom: 18px;
+  letter-spacing: 0.01em;
+}
+
+.service-detail p {
+  font-size: 14px;
+  color: var(--text-2);
+  line-height: 1.75;
+  margin-bottom: 24px;
+  font-weight: 300;
+}
+
+.deliverables {
+  list-style: none;
+  margin-bottom: 32px;
+}
+
+.deliverables li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--text-2);
+  padding: 9px 0;
+  border-bottom: 1px solid var(--border);
+  font-weight: 300;
+}
+
+.deliverables li:first-child { border-top: 1px solid var(--border); }
+
+.del-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  margin-top: 1px;
+  color: var(--blue);
+}
+
+.service-price-block {
+  background: var(--bg-4);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.price-main {
+  font-family: 'Instrument Serif', serif;
+  font-size: 28px;
+  color: var(--text-1);
+  line-height: 1;
+}
+
+.price-note { font-size: 12px; color: var(--text-3); margin-top: 3px; }
+
+/* ── PRICING TABLE ── */
+.pricing { background: var(--bg); }
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.price-card {
+  background: var(--bg-2);
+  padding: 36px 32px;
+  position: relative;
+}
+
+.price-card.featured {
+  background: var(--bg-3);
+}
+
+.price-card-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 100px;
+  margin-bottom: 20px;
+}
+
+.badge-blue { background: var(--blue-dim); color: var(--blue); border: 1px solid var(--blue-mid); }
+.badge-green { background: rgba(74,222,128,0.1); color: #4ade80; border: 1px solid rgba(74,222,128,0.2); }
+.badge-amber { background: rgba(251,191,36,0.1); color: #fbbf24; border: 1px solid rgba(251,191,36,0.2); }
+
+.price-card h3 {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-1);
+  margin-bottom: 6px;
+  letter-spacing: -0.02em;
+}
+
+.price-card .desc {
+  font-size: 13px;
+  color: var(--text-3);
+  font-weight: 300;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  min-height: 40px;
+}
+
+.price-num {
+  font-family: 'Instrument Serif', serif;
+  font-size: 36px;
+  color: var(--text-1);
+  line-height: 1;
+  margin-bottom: 2px;
+}
+
+.price-period {
+  font-size: 12px;
+  color: var(--text-3);
+  margin-bottom: 28px;
+}
+
+.price-features {
+  list-style: none;
+  border-top: 1px solid var(--border);
+  padding-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.price-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-2);
+  font-weight: 300;
+}
+
+.pf-check {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--blue);
+}
+
+/* ── HOW ── */
+.how { background: var(--bg-2); }
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  position: relative;
+}
+
+.step-connector {
+  position: absolute;
+  top: 19px;
+  left: calc(12.5% + 19px);
+  right: calc(12.5% + 19px);
+  height: 1px;
+  background: var(--border-2);
+}
+
+.step {
+  padding: 0 24px;
+  position: relative;
+}
+
+.step-n {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--bg-3);
+  border: 1px solid var(--border-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-2);
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.step h4 {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-1);
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+
+.step p {
+  font-size: 13px;
+  color: var(--text-3);
+  line-height: 1.65;
+  font-weight: 300;
+}
+
+/* ── CONTACT ── */
+.contact { background: var(--bg); }
+
+.contact-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.contact-left h2 {
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+
+.contact-left p {
+  font-size: 15px;
+  color: var(--text-2);
+  font-weight: 300;
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+
+.contact-items {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 14px;
+  color: var(--text-2);
+  font-weight: 300;
+}
+
+.ci-icon {
+  width: 36px;
+  height: 36px;
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--text-2);
+}
+
+/* FORM */
+.form-box {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 40px;
+}
+
+.form-box h3 {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-1);
+  margin-bottom: 6px;
+  letter-spacing: -0.02em;
+}
+
+.form-box .fsub {
+  font-size: 13px;
+  color: var(--text-3);
+  margin-bottom: 28px;
+  font-weight: 300;
+}
+
+.fg { margin-bottom: 14px; }
+
+.fg label {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-bottom: 7px;
+}
+
+.fg input, .fg select {
+  width: 100%;
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: 11px 14px;
+  color: var(--text-1);
+  font-family: 'Geist', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  outline: none;
+  transition: border-color 0.2s;
+  -webkit-appearance: none;
+}
+
+.fg input::placeholder { color: var(--text-3); }
+
+.fg input:focus, .fg select:focus {
+  border-color: rgba(47,110,245,0.4);
+}
+
+.fg select option { background: var(--bg-3); color: var(--text-1); }
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+.form-submit {
+  width: 100%;
+  background: var(--blue);
+  color: #fff;
+  padding: 13px;
+  border-radius: 7px;
+  font-family: 'Geist', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  margin-top: 6px;
+  transition: opacity 0.2s;
+}
+
+.form-submit:hover { opacity: 0.88; }
+
+.form-note {
+  font-size: 11px;
+  color: var(--text-3);
+  text-align: center;
+  margin-top: 12px;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--bg-2);
+  border-top: 1px solid var(--border);
+  padding: 40px 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.footer-copy { font-size: 12px; color: var(--text-3); }
+
+/* ── WA FLOAT ── */
+.wa-float {
+  position: fixed;
+  bottom: 28px; right: 28px;
+  z-index: 200;
+  width: 50px; height: 50px;
+  border-radius: 50%;
+  background: #1a3a28;
+  border: 1px solid rgba(74,222,128,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.wa-float:hover { background: #1f4530; transform: scale(1.06); }
+.wa-float svg { width: 22px; height: 22px; fill: #4ade80; }
+
+/* ── REVEAL ── */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.55s ease, transform 0.55s ease; }
+.reveal.in { opacity: 1; transform: translateY(0); }
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .nav-links { display: none; }
+  section { padding: 72px 5%; }
+  .hero { padding: 90px 5% 64px; }
+  .service-panel.active { grid-template-columns: 1fr; }
+  .service-detail:first-child { border-radius: 12px 12px 0 0; }
+  .service-detail:last-child  { border-radius: 0 0 12px 12px; }
+  .pricing-grid { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .step-connector { display: none; }
+  .contact-inner { grid-template-columns: 1fr; gap: 40px; }
+  .form-row { grid-template-columns: 1fr; }
+  .hero-metrics { gap: 28px; flex-wrap: wrap; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">Scalix<span class="logo-dot">.</span></a>
+  <ul class="nav-links">
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#precios">Precios</a></li>
+    <li><a href="#proceso">Proceso</a></li>
+    <li><a href="#contacto" class="nav-btn">Agendar diagnóstico</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-line"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Marketing Digital · Buenos Aires</div>
+    <h1>Conocé tu negocio.<br><em>Hacelo crecer.</em></h1>
+    <p class="hero-sub">Auditorías profundas, estrategia basada en datos y automatizaciones con IA para empresas que quieren escalar con precisión, no con suposiciones.</p>
+    <div class="hero-actions">
+      <a href="#contacto" class="btn btn-primary">Agendar diagnóstico gratuito</a>
+      <a href="#servicios" class="btn btn-outline">Ver servicios</a>
+    </div>
+    <div class="hero-metrics">
+      <div>
+        <div class="metric-val">48h</div>
+        <div class="metric-label">Primer diagnóstico</div>
+      </div>
+      <div>
+        <div class="metric-val">100%</div>
+        <div class="metric-label">Estrategia a medida</div>
+      </div>
+      <div>
+        <div class="metric-val">4</div>
+        <div class="metric-label">Servicios especializados</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="servicios">
+  <div class="section-head reveal">
+    <div class="label">Servicios</div>
+    <h2 class="serif">Lo que hacemos, en detalle</h2>
+    <p>Cada servicio tiene un entregable concreto, un proceso definido y un impacto medible sobre tu negocio.</p>
+  </div>
+
+  <div class="service-tabs reveal">
+    <button class="stab active" data-panel="seo">Auditoría SEO</button>
+    <button class="stab" data-panel="meta">Auditoría Meta Ads</button>
+    <button class="stab" data-panel="plan">Plan de acción</button>
+    <button class="stab" data-panel="ai">Agente IA WhatsApp</button>
+  </div>
+
+  <!-- SEO -->
+  <div class="service-panel active" id="panel-seo">
+    <div class="service-detail">
+      <h3 class="serif">Auditoría SEO</h3>
+      <div class="tagline">Diagnóstico técnico y estratégico de presencia orgánica</div>
+      <p>Analizamos tu sitio web desde adentro: arquitectura técnica, velocidad de carga, estructura de URLs, rastreo e indexación, y la calidad del contenido publicado. Identificamos por qué Google no te encuentra o por qué tus competidores te superan en los resultados orgánicos.</p>
+      <p>El informe entregado no es una lista de errores — es un diagnóstico priorizado por impacto, con contexto de negocio y pasos claros para resolver cada punto.</p>
+      <ul class="deliverables">
+        <li>
+          <svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>
+          Análisis técnico completo: Core Web Vitals, rastreo, indexación, errores
+        </li>
+        <li>
+          <svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>
+          Auditoría de contenido y estructura de keywords actuales
+        </li>
+        <li>
+          <svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>
+          Análisis de backlinks y autoridad de dominio
+        </li>
+        <li>
+          <svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>
+          Benchmarking contra 3 competidores directos
+        </li>
+        <li>
+          <svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>
+          Informe PDF con hallazgos priorizados + llamada de revisión
+        </li>
+      </ul>
+      <div class="service-price-block">
+        <div>
+          <div class="price-main">$150.000 – 200.000</div>
+          <div class="price-note">ARS · pago único &nbsp;·&nbsp; ≈ USD 120–160</div>
+        </div>
+        <a href="#contacto" class="btn btn-primary" style="font-size:13px;padding:10px 20px">Contratar</a>
+      </div>
+    </div>
+    <div class="service-detail" style="border-left:none">
+      <div class="label" style="margin-bottom:20px">¿Para quién es?</div>
+      <p style="margin-bottom:28px">Ideal para negocios con presencia web que quieren entender por qué no reciben tráfico orgánico, o que sospechan que están perdiendo visibilidad frente a competidores.</p>
+      <div class="label" style="margin-bottom:16px">Sectores frecuentes</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px">
+        <span style="font-size:12px;padding:5px 12px;border:1px solid var(--border);border-radius:100px;color:var(--text-2)">Gastronomía</span>
+        <span style="font-size:12px;padding:5px 12px;border:1px solid var(--border);border-radius:100px;color:var(--text-2)">Profesionales independientes</span>
+        <span style="font-size:12px;padding:5px 12px;border:1px solid var(--border);border-radius:100px;color:var(--text-2)">E-commerce</span>
+        <span style="font-size:12px;padding:5px 12px;border:1px solid var(--border);border-radius:100px;color:var(--text-2)">Inmobiliarias</span>
+        <span style="font-size:12px;padding:5px 12px;border:1px solid var(--border);border-radius:100px;color:var(--text-2)">Servicios locales</span>
+      </div>
+      <div class="label" style="margin-bottom:14px">Tiempo de entrega</div>
+      <p style="font-size:22px;font-family:'Instrument Serif',serif;color:var(--text-1)">5–7 días hábiles</p>
+    </div>
+  </div>
+
+  <!-- META -->
+  <div class="service-panel" id="panel-meta">
+    <div class="service-detail">
+      <h3 class="serif">Auditoría Meta Ads</h3>
+      <div class="tagline">Diagnóstico completo de campañas en Facebook e Instagram</div>
+      <p>Analizamos tu cuenta publicitaria de principio a fin: estructura de campañas, segmentación de audiencias, calidad de creatividades, coherencia entre el anuncio y la landing page, configuración del Pixel y atribución de conversiones. El informe no es una lista de observaciones — es un diagnóstico priorizado por impacto, con correcciones concretas para cada problema.</p>
+      <p>En la mayoría de las cuentas encontramos al menos uno de estos problemas críticos: Pixel mal configurado (las campañas optimizan por clics en lugar de leads), audiencias superpuestas que compiten entre sí, o creatividades que no responden al miedo o motivación real del segmento. Cualquiera de estos puede estar haciendo que tu presupuesto rinda a la mitad de lo que debería.</p>
+      <ul class="deliverables">
+        <li>
+          <svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>
+          Estructura completa: campañas, conjuntos de anuncios, creatividades y presupuestos
+        </li>
+        <li>
+          <svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>
+          Auditoría de Pixel: instalación, eventos de conversión (Lead, Contact, Purchase) y atribución
+        </li>
+        <li>
+          <svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>
+          Análisis de coherencia ad–landing: qué espera el usuario al hacer clic y qué encuentra
+        </li>
+        <li>
+          <svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>
+          Evaluación de hooks, copy y formatos: qué piezas funcionan y por qué las otras no
+        </li>
+        <li>
+          <svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>
+          Oportunidades de retargeting y segmentación sin explotar
+        </li>
+        <li>
+          <svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>
+          Informe con CPL/CPA real, plan de acción priorizado y llamada de revisión
+        </li>
+      </ul>
+      <div class="service-price-block">
+        <div>
+          <div class="price-main">$120.000 – 180.000</div>
+          <div class="price-note">ARS · pago único &nbsp;·&nbsp; ≈ USD 100–145</div>
+        </div>
+        <a href="#contacto" class="btn btn-primary" style="font-size:13px;padding:10px 20px">Contratar</a>
+      </div>
+    </div>
+    <div class="service-detail" style="border-left:none">
+      <div class="label" style="margin-bottom:16px">Lo que revisamos en detalle</div>
+      <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:32px">
+        <div style="padding:12px 16px;background:var(--bg-4);border-radius:8px;font-size:13px;color:var(--text-2);font-weight:300;border-left:2px solid var(--blue)">Coherencia ad&thinsp;&harr;&thinsp;landing: nombre de marca, oferta, tono visual y próximo paso claro</div>
+        <div style="padding:12px 16px;background:var(--bg-4);border-radius:8px;font-size:13px;color:var(--text-2);font-weight:300;border-left:2px solid var(--blue)">Copy de anuncios: si el hook responde al miedo o motivación real de tu segmento</div>
+        <div style="padding:12px 16px;background:var(--bg-4);border-radius:8px;font-size:13px;color:var(--text-2);font-weight:300;border-left:2px solid var(--blue)">CTAs: "Solicitar presupuesto" vs. "Presupuesto gratis en 2 minutos" — la diferencia importa</div>
+        <div style="padding:12px 16px;background:var(--bg-4);border-radius:8px;font-size:13px;color:var(--text-2);font-weight:300;border-left:2px solid var(--blue)">Social proof: testimonios reales, Google Reviews y métricas que generan confianza</div>
+        <div style="padding:12px 16px;background:var(--bg-4);border-radius:8px;font-size:13px;color:var(--text-2);font-weight:300;border-left:2px solid var(--blue)">Oportunidades de retargeting: audiencias que visitaron tu sitio y no convirtieron</div>
+      </div>
+      <div class="label" style="margin-bottom:14px">Sectores frecuentes</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px">
+        <span style="font-size:12px;padding:5px 12px;border:1px solid var(--border);border-radius:100px;color:var(--text-2)">Comercios locales</span>
+        <span style="font-size:12px;padding:5px 12px;border:1px solid var(--border);border-radius:100px;color:var(--text-2)">E-commerce</span>
+        <span style="font-size:12px;padding:5px 12px;border:1px solid var(--border);border-radius:100px;color:var(--text-2)">Gastronomía</span>
+        <span style="font-size:12px;padding:5px 12px;border:1px solid var(--border);border-radius:100px;color:var(--text-2)">Inmobiliarias</span>
+        <span style="font-size:12px;padding:5px 12px;border:1px solid var(--border);border-radius:100px;color:var(--text-2)">Servicios B2C</span>
+      </div>
+      <div class="label" style="margin-bottom:14px">Tiempo de entrega</div>
+      <p style="font-size:22px;font-family:'Instrument Serif',serif;color:var(--text-1)">3–5 días hábiles</p>
+    </div>
+  </div>
+
+  <!-- PLAN -->
+  <div class="service-panel" id="panel-plan">
+    <div class="service-detail">
+      <h3 class="serif">Plan de acción</h3>
+      <div class="tagline">Hoja de ruta de marketing con prioridades claras</div>
+      <p>Después de una auditoría —o a partir de una revisión general del negocio— entregamos un plan de acción estructurado: qué hacer primero, por qué, cómo medirlo y qué resultado esperar. No es una lista de tareas genéricas sino una guía construida sobre el contexto real de tu empresa.</p>
+      <p>Puede entregarse como servicio independiente o como continuación natural de cualquier auditoría.</p>
+      <ul class="deliverables">
+        <li>
+          <svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>
+          Diagnóstico consolidado de situación actual
+        </li>
+        <li>
+          <svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>
+          Prioridades de acción por impacto y urgencia
+        </li>
+        <li>
+          <svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>
+          Estimaciones de inversión necesaria y resultados esperados
+        </li>
+        <li>
+          <svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>
+          KPIs de seguimiento y métricas de éxito por acción
+        </li>
+        <li>
+          <svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>
+          Sesión de presentación y revisión en conjunto
+        </li>
+      </ul>
+      <div class="service-price-block">
+        <div>
+          <div class="price-main">Incluido en pack</div>
+          <div class="price-note">o por separado según alcance</div>
+        </div>
+        <a href="#contacto" class="btn btn-primary" style="font-size:13px;padding:10px 20px">Consultar</a>
+      </div>
+    </div>
+    <div class="service-detail" style="border-left:none">
+      <div class="label" style="margin-bottom:20px">¿Con qué se combina?</div>
+      <p style="margin-bottom:28px">El plan de acción es el paso natural después de una auditoría SEO, Meta Ads, o ambas. También puede funcionar como consultoría inicial para negocios que aún no invierten en publicidad.</p>
+      <div class="label" style="margin-bottom:14px">Forma parte del</div>
+      <div style="background:var(--blue-dim);border:1px solid var(--blue-mid);border-radius:10px;padding:20px 24px;margin-bottom:32px">
+        <div style="font-size:13px;font-weight:500;color:var(--blue);margin-bottom:6px;letter-spacing:0.02em">Portfolio Pack — Precio de lanzamiento</div>
+        <div style="font-family:'Instrument Serif',serif;font-size:28px;color:var(--text-1);margin-bottom:4px">$250.000 ARS</div>
+        <div style="font-size:12px;color:var(--text-3)">Auditoría SEO + Auditoría Meta Ads + Plan de acción &nbsp;·&nbsp; ≈ USD 200</div>
+      </div>
+      <div class="label" style="margin-bottom:14px">Tiempo de entrega</div>
+      <p style="font-size:22px;font-family:'Instrument Serif',serif;color:var(--text-1)">7–10 días hábiles</p>
+    </div>
+  </div>
+
+  <!-- AI -->
+  <div class="service-panel" id="panel-ai">
+    <div class="service-detail">
+      <h3 class="serif">Agente IA para WhatsApp</h3>
+      <div class="tagline">Automatización de atención y captación de leads con inteligencia artificial</div>
+      <p>Diseñamos e implementamos un agente conversacional con IA integrado a tu WhatsApp Business. El agente responde consultas frecuentes, califica leads, agenda turnos o citas, y deriva a un humano cuando es necesario — todo de forma automática, las 24 horas.</p>
+      <p>El resultado es una experiencia de atención consistente y sin demoras, con un costo marginal cercano a cero por conversación.</p>
+      <ul class="deliverables">
+        <li>
+          <svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>
+          Relevamiento de flujos de atención y preguntas frecuentes
+        </li>
+        <li>
+          <svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>
+          Diseño de conversaciones y árbol de decisiones
+        </li>
+        <li>
+          <svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>
+          Setup e integración con WhatsApp Business API
+        </li>
+        <li>
+          <svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>
+          Entrenamiento del agente con información del negocio
+        </li>
+        <li>
+          <svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>
+          Mantenimiento mensual, ajustes y reportes de actividad
+        </li>
+      </ul>
+      <div class="service-price-block">
+        <div>
+          <div class="price-main">$200.000 – 300.000</div>
+          <div class="price-note">ARS / mes &nbsp;·&nbsp; setup incluido &nbsp;·&nbsp; ≈ USD 160–240</div>
+        </div>
+        <a href="#contacto" class="btn btn-primary" style="font-size:13px;padding:10px 20px">Contratar</a>
+      </div>
+    </div>
+    <div class="service-detail" style="border-left:none">
+      <div class="label" style="margin-bottom:20px">¿Para quién tiene más impacto?</div>
+      <p style="margin-bottom:28px">Negocios que reciben muchas consultas repetitivas por WhatsApp, o que pierden oportunidades por no responder rápido. Especialmente útil para profesionales independientes, inmobiliarias y comercios con atención fuera del horario laboral.</p>
+      <div class="label" style="margin-bottom:16px">Casos de uso comunes</div>
+      <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:32px">
+        <div style="font-size:13px;color:var(--text-2);font-weight:300;padding:10px 14px;background:var(--bg-3);border-radius:8px">Calificación de leads en inmobiliarias</div>
+        <div style="font-size:13px;color:var(--text-2);font-weight:300;padding:10px 14px;background:var(--bg-3);border-radius:8px">Agendamiento de turnos para profesionales</div>
+        <div style="font-size:13px;color:var(--text-2);font-weight:300;padding:10px 14px;background:var(--bg-3);border-radius:8px">Atención postventa en e-commerce</div>
+        <div style="font-size:13px;color:var(--text-2);font-weight:300;padding:10px 14px;background:var(--bg-3);border-radius:8px">FAQ y toma de pedidos en gastronomía</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SAMPLE AUDIT -->
+<section style="background:var(--bg-2);padding:96px 6%">
+  <div class="section-head reveal">
+    <div class="label">Ejemplo de trabajo</div>
+    <h2 class="serif">Así se ve una auditoría real</h2>
+    <p>Cada informe incluye diagnóstico por dimensión, hallazgos críticos priorizados y correcciones concretas — no recomendaciones genéricas.</p>
+  </div>
+
+  <div class="reveal" style="background:var(--bg-3);border:1px solid var(--border);border-radius:16px;overflow:hidden">
+    <!-- Header del caso -->
+    <div style="padding:28px 36px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px">
+      <div>
+        <div class="label" style="margin-bottom:6px">Caso real · Mayo 2026</div>
+        <div style="font-size:18px;font-weight:500;color:var(--text-1);letter-spacing:-0.02em">Auditoría Meta Ads — Empresa de fletes y mudanzas, Buenos Aires</div>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <span style="font-size:11px;padding:4px 12px;border:1px solid var(--border);border-radius:100px;color:var(--text-3)">Facebook Ads</span>
+        <span style="font-size:11px;padding:4px 12px;border:1px solid var(--border);border-radius:100px;color:var(--text-3)">Landing page</span>
+        <span style="font-size:11px;padding:4px 12px;border:1px solid var(--border);border-radius:100px;color:var(--text-3)">Píxel & tracking</span>
+      </div>
+    </div>
+
+    <!-- Scores -->
+    <div style="padding:28px 36px;border-bottom:1px solid var(--border);display:grid;grid-template-columns:repeat(6,1fr);gap:12px">
+      <div style="text-align:center">
+        <div style="font-family:'Instrument Serif',serif;font-size:28px;color:#ef4444;line-height:1">4<span style="font-size:14px;color:var(--text-3)">/10</span></div>
+        <div style="font-size:10px;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin-top:4px">Coherencia ad–landing</div>
+      </div>
+      <div style="text-align:center">
+        <div style="font-family:'Instrument Serif',serif;font-size:28px;color:#f59e0b;line-height:1">5<span style="font-size:14px;color:var(--text-3)">/10</span></div>
+        <div style="font-size:10px;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin-top:4px">Copy y mensajes</div>
+      </div>
+      <div style="text-align:center">
+        <div style="font-family:'Instrument Serif',serif;font-size:28px;color:#f59e0b;line-height:1">5<span style="font-size:14px;color:var(--text-3)">/10</span></div>
+        <div style="font-size:10px;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin-top:4px">Estructura landing</div>
+      </div>
+      <div style="text-align:center">
+        <div style="font-family:'Instrument Serif',serif;font-size:28px;color:#ef4444;line-height:1">2<span style="font-size:14px;color:var(--text-3)">/10</span></div>
+        <div style="font-size:10px;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin-top:4px">Social proof</div>
+      </div>
+      <div style="text-align:center">
+        <div style="font-family:'Instrument Serif',serif;font-size:28px;color:#22c55e;line-height:1">7<span style="font-size:14px;color:var(--text-3)">/10</span></div>
+        <div style="font-size:10px;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin-top:4px">Servicios y claridad</div>
+      </div>
+      <div style="text-align:center">
+        <div style="font-family:'Instrument Serif',serif;font-size:28px;color:#ef4444;line-height:1">4<span style="font-size:14px;color:var(--text-3)">/10</span></div>
+        <div style="font-size:10px;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin-top:4px">Conversión</div>
+      </div>
+    </div>
+
+    <!-- Hallazgos -->
+    <div style="padding:28px 36px;display:grid;grid-template-columns:1fr 1fr;gap:16px">
+      <div style="background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.15);border-radius:10px;padding:20px 24px">
+        <div style="font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:#ef4444;margin-bottom:10px">Problema crítico</div>
+        <div style="font-size:14px;font-weight:500;color:var(--text-1);margin-bottom:8px">Identidad de marca fragmentada</div>
+        <div style="font-size:13px;color:var(--text-2);font-weight:300;line-height:1.65">El negocio opera con dos nombres distintos en Facebook y en su sitio web. Un usuario que hace clic en el anuncio y llega a la landing siente que aterrizó en un lugar diferente. Esto destruye la confianza antes de leer una sola línea — y reduce artificialmente la tasa de conversión de todas las campañas.</div>
+      </div>
+      <div style="background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.15);border-radius:10px;padding:20px 24px">
+        <div style="font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:#ef4444;margin-bottom:10px">Problema crítico</div>
+        <div style="font-size:14px;font-weight:500;color:var(--text-1);margin-bottom:8px">Pixel sin eventos configurados</div>
+        <div style="font-size:13px;color:var(--text-2);font-weight:300;line-height:1.65">El CTA principal lleva a WhatsApp, pero ese clic no está registrado como evento de conversión. Sin el evento "Contact" configurado, las campañas optimizan por clics en lugar de leads — la peor configuración posible en términos de eficiencia de presupuesto.</div>
+      </div>
+      <div style="background:rgba(245,158,11,0.06);border:1px solid rgba(245,158,11,0.15);border-radius:10px;padding:20px 24px">
+        <div style="font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:#f59e0b;margin-bottom:10px">Oportunidad</div>
+        <div style="font-size:14px;font-weight:500;color:var(--text-1);margin-bottom:8px">Diferenciador enterrado</div>
+        <div style="font-size:13px;color:var(--text-2);font-weight:300;line-height:1.65">El servicio de instalación llave en mano (mudanza + aires + electricidad + pintura) no lo ofrece casi ningún competidor directo. Está mencionado en el fondo de la página con un nombre que no comunica nada. Construir toda la estrategia alrededor de este diferenciador puede justificar un precio premium.</div>
+      </div>
+      <div style="background:rgba(245,158,11,0.06);border:1px solid rgba(245,158,11,0.15);border-radius:10px;padding:20px 24px">
+        <div style="font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:#f59e0b;margin-bottom:10px">Oportunidad</div>
+        <div style="font-size:14px;font-weight:500;color:var(--text-1);margin-bottom:8px">Retargeting sin activar</div>
+        <div style="font-size:13px;color:var(--text-2);font-weight:300;line-height:1.65">No hay audiencias de retargeting configuradas. Con el Pixel activo, se puede mostrar un anuncio diferente (con urgencia o garantía) a quienes ya visitaron la página sin convertir. Esto típicamente reduce el costo por lead entre un 40 y un 60%.</div>
+      </div>
+    </div>
+
+    <div style="padding:20px 36px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
+      <div style="font-size:12px;color:var(--text-3)">El informe completo incluye 9 páginas con análisis de copy, tabla de coherencia ad–landing, correcciones específicas y plan de acción priorizado.</div>
+      <a href="#contacto" class="btn btn-primary" style="font-size:13px;padding:10px 22px">Quiero una auditoría así</a>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="precios">
+  <div class="section-head reveal">
+    <div class="label">Precios</div>
+    <h2 class="serif">Inversión clara, sin sorpresas</h2>
+    <p>Todos los valores en ARS con equivalente en USD. Los servicios mensuales incluyen informes de seguimiento y disponibilidad para consultas.</p>
+  </div>
+
+  <div class="pricing-grid reveal">
+    <div class="price-card">
+      <div class="price-card-badge badge-amber">Pago único</div>
+      <h3>Auditoría SEO</h3>
+      <p class="desc">Diagnóstico técnico y estratégico de presencia orgánica.</p>
+      <div class="price-num">$150k–200k</div>
+      <div class="price-period">ARS · pago único &nbsp;·&nbsp; ≈ USD 120–160</div>
+      <ul class="price-features">
+        <li><svg class="pf-check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>Análisis técnico completo</li>
+        <li><svg class="pf-check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>Keywords y contenido</li>
+        <li><svg class="pf-check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>Benchmarking competidores</li>
+        <li><svg class="pf-check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>Informe + llamada de revisión</li>
+        <li><svg class="pf-check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>Entrega en 5–7 días</li>
+      </ul>
+    </div>
+
+    <div class="price-card featured">
+      <div class="price-card-badge badge-blue">Portfolio Pack</div>
+      <h3>SEO + Meta + Plan</h3>
+      <p class="desc">Diagnóstico completo de presencia digital y hoja de ruta de acción.</p>
+      <div class="price-num">$250.000</div>
+      <div class="price-period">ARS · precio de lanzamiento &nbsp;·&nbsp; ≈ USD 200</div>
+      <ul class="price-features">
+        <li><svg class="pf-check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>Auditoría SEO completa</li>
+        <li><svg class="pf-check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>Auditoría Meta Ads completa</li>
+        <li><svg class="pf-check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>Plan de acción priorizado</li>
+        <li><svg class="pf-check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>Sesión de presentación</li>
+        <li><svg class="pf-check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>Entrega en 7–10 días</li>
+      </ul>
+    </div>
+
+    <div class="price-card">
+      <div class="price-card-badge badge-amber">Pago único</div>
+      <h3>Auditoría Meta Ads</h3>
+      <p class="desc">Diagnóstico de campañas activas en Facebook e Instagram.</p>
+      <div class="price-num">$120k–180k</div>
+      <div class="price-period">ARS · pago único &nbsp;·&nbsp; ≈ USD 100–145</div>
+      <ul class="price-features">
+        <li><svg class="pf-check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>Estructura de campañas</li>
+        <li><svg class="pf-check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>Audiencias y creatividades</li>
+        <li><svg class="pf-check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>Revisión de píxel y atribución</li>
+        <li><svg class="pf-check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>Informe + llamada de revisión</li>
+        <li><svg class="pf-check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>Entrega en 3–5 días</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Retainer row -->
+  <div style="margin-top:2px;background:var(--bg-2);border:1px solid var(--border);border-radius:12px;padding:32px 36px;display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:24px;align-items:center" class="reveal">
+    <div>
+      <div class="label" style="margin-bottom:8px">Servicios recurrentes</div>
+      <p style="font-size:13px;color:var(--text-3);font-weight:300;line-height:1.6">Para empresas que quieren acompañamiento continuo y crecimiento sostenido mes a mes.</p>
+    </div>
+    <div>
+      <div style="font-size:12px;color:var(--text-3);margin-bottom:4px">Gestión Meta Ads</div>
+      <div style="font-family:'Instrument Serif',serif;font-size:22px;color:var(--text-1)">$180k–250k</div>
+      <div style="font-size:11px;color:var(--text-3)">ARS / mes &nbsp;·&nbsp; ≈ USD 145–200</div>
+    </div>
+    <div>
+      <div style="font-size:12px;color:var(--text-3);margin-bottom:4px">SEO recurrente</div>
+      <div style="font-family:'Instrument Serif',serif;font-size:22px;color:var(--text-1)">$150k–200k</div>
+      <div style="font-size:11px;color:var(--text-3)">ARS / mes &nbsp;·&nbsp; ≈ USD 120–160</div>
+    </div>
+    <div>
+      <div style="font-size:12px;color:var(--text-3);margin-bottom:4px">Agente IA WhatsApp</div>
+      <div style="font-family:'Instrument Serif',serif;font-size:22px;color:var(--text-1)">$200k–300k</div>
+      <div style="font-size:11px;color:var(--text-3)">ARS / mes &nbsp;·&nbsp; ≈ USD 160–240</div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW -->
+<section class="how" id="proceso">
+  <div class="section-head reveal">
+    <div class="label">Proceso</div>
+    <h2 class="serif">Cómo trabajamos</h2>
+    <p>Sin reuniones interminables ni procesos de agencia. En menos de una semana tenés claridad total sobre tu situación.</p>
+  </div>
+
+  <div class="steps reveal" style="position:relative">
+    <div class="step-connector"></div>
+    <div class="step">
+      <div class="step-n">01</div>
+      <h4>Diagnóstico inicial</h4>
+      <p>Completás el formulario y en 48 hs te hacemos una primera devolución sobre tu situación actual, sin costo.</p>
+    </div>
+    <div class="step">
+      <div class="step-n">02</div>
+      <h4>Propuesta y alcance</h4>
+      <p>Definimos juntos qué servicio tiene más sentido según tus objetivos y presupuesto. Sin paquetes rígidos.</p>
+    </div>
+    <div class="step">
+      <div class="step-n">03</div>
+      <h4>Auditoría o implementación</h4>
+      <p>Ejecutamos el trabajo con fechas de entrega claras. Tenés visibilidad de cada etapa del proceso.</p>
+    </div>
+    <div class="step">
+      <div class="step-n">04</div>
+      <h4>Revisión y continuidad</h4>
+      <p>Presentamos los resultados, respondemos preguntas y definimos el próximo paso si querés continuar.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contacto">
+  <div class="contact-inner">
+    <div class="contact-left reveal">
+      <div class="label">Contacto</div>
+      <h2 class="serif">Empezá con un diagnóstico gratuito</h2>
+      <p>Antes de cualquier propuesta, hacemos una revisión rápida de tu situación actual. Sin costo y sin compromiso. Si hay oportunidades claras, te lo decimos. Si no, también.</p>
+      <div class="contact-items">
+        <div class="contact-item">
+          <div class="ci-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2" y="3" width="12" height="10" rx="1.5"/><polyline points="2,4 8,9 14,4"/></svg>
+          </div>
+          hola@scalix.com
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M13.5 10.5c-.5-.5-1.5-1-2-1s-1 .5-1.5 1c-.5.5-1 .5-1.5.5C7 11 4.5 8.5 4.5 7c0-.5 0-1 .5-1.5C5.5 5 6 4.5 6 4s-.5-1.5-1-2C4.5 1.5 4 1.5 3.5 2l-.5.5C2 3.5 2 5 2.5 6.5 3 8 4.5 10 6 11.5c1.5 1.5 3.5 3 5 3.5 1.5.5 3 .5 4-1l.5-.5c.5-.5.5-1 0-1.5z"/></svg>
+          </div>
+          +54 9 11 0000-0000
+        </div>
+        <a href="https://wa.me/5491100000000" class="btn btn-wa" style="width:fit-content;margin-top:8px">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Escribir por WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="form-box">
+        <h3>Solicitar diagnóstico</h3>
+        <p class="fsub">Respondemos en menos de 24 horas hábiles.</p>
+        <div class="form-row">
+          <div class="fg">
+            <label>Nombre</label>
+            <input type="text" placeholder="Tu nombre">
+          </div>
+          <div class="fg">
+            <label>Empresa</label>
+            <input type="text" placeholder="Nombre del negocio">
+          </div>
+        </div>
+        <div class="fg">
+          <label>Email</label>
+          <input type="email" placeholder="tu@empresa.com">
+        </div>
+        <div class="fg">
+          <label>WhatsApp</label>
+          <input type="tel" placeholder="+54 9 11 0000 0000">
+        </div>
+        <div class="fg">
+          <label>¿En qué podemos ayudarte?</label>
+          <select>
+            <option value="" disabled selected>Seleccioná una opción</option>
+            <option>Mejorar mi posicionamiento en Google (SEO)</option>
+            <option>Optimizar mis campañas de Meta Ads</option>
+            <option>Implementar agente IA en WhatsApp</option>
+            <option>Diagnóstico general de marketing</option>
+            <option>Pack completo (SEO + Meta + Plan)</option>
+          </select>
+        </div>
+        <button class="form-submit">Enviar solicitud</button>
+        <p class="form-note">Sin spam. Sin compromiso. Respondemos en menos de 24 hs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="#" class="logo">Scalix<span class="logo-dot">.</span></a>
+  <p class="footer-copy">© 2025 Scalix · Marketing Digital · Buenos Aires</p>
+  <a href="https://wa.me/5491100000000" class="btn btn-wa" style="font-size:13px;padding:9px 18px">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    WhatsApp
+  </a>
+</footer>
+
+<!-- WA FLOAT -->
+<a href="https://wa.me/5491100000000" class="wa-float" title="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+// Tabs
+document.querySelectorAll('.stab').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const panel = btn.dataset.panel;
+    document.querySelectorAll('.stab').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.service-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('panel-' + panel).classList.add('active');
+  });
+});
+
+// Reveal on scroll
+const obs = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) setTimeout(() => e.target.classList.add('in'), i * 70);
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
