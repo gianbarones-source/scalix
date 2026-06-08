@@ -7,6 +7,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>emailjs.init('knYUsUn5aJomn_o4g');</script>
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -54,7 +57,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* ── UTILS ── */
 .label {
   font-size: 11px;
   font-weight: 500;
@@ -65,10 +67,8 @@ body {
 }
 
 .serif { font-family: 'Instrument Serif', serif; }
-
 h1,h2,h3,h4 { line-height: 1.1; letter-spacing: -0.02em; font-weight: 500; }
 
-/* ── NAV ── */
 nav {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -123,7 +123,6 @@ nav {
 
 .nav-btn:hover { opacity: 0.88; }
 
-/* ── HERO ── */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -141,7 +140,6 @@ nav {
   opacity: 0.3;
 }
 
-/* subtle dot grid */
 .hero::before {
   content: '';
   position: absolute;
@@ -222,10 +220,7 @@ h1 em {
   border: none;
 }
 
-.btn-primary {
-  background: var(--blue);
-  color: #fff;
-}
+.btn-primary { background: var(--blue); color: #fff; }
 .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
 
 .btn-outline {
@@ -258,13 +253,8 @@ h1 em {
   margin-bottom: 4px;
 }
 
-.metric-label {
-  font-size: 12px;
-  color: var(--text-3);
-  font-weight: 400;
-}
+.metric-label { font-size: 12px; color: var(--text-3); font-weight: 400; }
 
-/* ── SECTION SHELL ── */
 section { padding: 96px 6%; }
 .section-head { margin-bottom: 56px; }
 .section-head h2 {
@@ -281,7 +271,6 @@ section { padding: 96px 6%; }
   line-height: 1.7;
 }
 
-/* ── SERVICES ── */
 .services { background: var(--bg-2); }
 
 .service-tabs {
@@ -310,16 +299,13 @@ section { padding: 96px 6%; }
   white-space: nowrap;
 }
 
-.stab.active {
-  background: var(--bg-4);
-  color: var(--text-1);
-  border: 1px solid var(--border-2);
-}
-
+.stab.active { background: var(--bg-4); color: var(--text-1); border: 1px solid var(--border-2); }
 .stab:not(.active):hover { color: var(--text-1); }
 
 .service-panel { display: none; }
 .service-panel.active { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; }
+.service-panel.single { grid-template-columns: 1fr; }
+.service-panel.single .service-detail { border-radius: 12px; }
 
 .service-detail {
   background: var(--bg-3);
@@ -330,38 +316,11 @@ section { padding: 96px 6%; }
 .service-detail:first-child { border-radius: 12px 0 0 12px; }
 .service-detail:last-child  { border-radius: 0 12px 12px 0; }
 
-/* single-service panels */
-.service-panel.single { grid-template-columns: 1fr; }
-.service-panel.single .service-detail { border-radius: 12px; }
+.service-detail h3 { font-size: 22px; font-weight: 400; color: var(--text-1); margin-bottom: 10px; }
+.service-detail .tagline { font-size: 13px; color: var(--blue); font-weight: 500; margin-bottom: 18px; letter-spacing: 0.01em; }
+.service-detail p { font-size: 14px; color: var(--text-2); line-height: 1.75; margin-bottom: 24px; font-weight: 300; }
 
-.service-detail h3 {
-  font-size: 22px;
-  font-weight: 400;
-  color: var(--text-1);
-  margin-bottom: 10px;
-}
-
-.service-detail .tagline {
-  font-size: 13px;
-  color: var(--blue);
-  font-weight: 500;
-  margin-bottom: 18px;
-  letter-spacing: 0.01em;
-}
-
-.service-detail p {
-  font-size: 14px;
-  color: var(--text-2);
-  line-height: 1.75;
-  margin-bottom: 24px;
-  font-weight: 300;
-}
-
-.deliverables {
-  list-style: none;
-  margin-bottom: 32px;
-}
-
+.deliverables { list-style: none; margin-bottom: 32px; }
 .deliverables li {
   display: flex;
   align-items: flex-start;
@@ -372,16 +331,9 @@ section { padding: 96px 6%; }
   border-bottom: 1px solid var(--border);
   font-weight: 300;
 }
-
 .deliverables li:first-child { border-top: 1px solid var(--border); }
 
-.del-icon {
-  width: 16px;
-  height: 16px;
-  flex-shrink: 0;
-  margin-top: 1px;
-  color: var(--blue);
-}
+.del-icon { width: 16px; height: 16px; flex-shrink: 0; margin-top: 1px; color: var(--blue); }
 
 .service-price-block {
   background: var(--bg-4);
@@ -394,16 +346,9 @@ section { padding: 96px 6%; }
   gap: 16px;
 }
 
-.price-main {
-  font-family: 'Instrument Serif', serif;
-  font-size: 28px;
-  color: var(--text-1);
-  line-height: 1;
-}
-
+.price-main { font-family: 'Instrument Serif', serif; font-size: 28px; color: var(--text-1); line-height: 1; }
 .price-note { font-size: 12px; color: var(--text-3); margin-top: 3px; }
 
-/* ── PRICING TABLE ── */
 .pricing { background: var(--bg); }
 
 .pricing-grid {
@@ -415,15 +360,8 @@ section { padding: 96px 6%; }
   overflow: hidden;
 }
 
-.price-card {
-  background: var(--bg-2);
-  padding: 36px 32px;
-  position: relative;
-}
-
-.price-card.featured {
-  background: var(--bg-3);
-}
+.price-card { background: var(--bg-2); padding: 36px 32px; position: relative; }
+.price-card.featured { background: var(--bg-3); }
 
 .price-card-badge {
   display: inline-block;
@@ -440,36 +378,10 @@ section { padding: 96px 6%; }
 .badge-green { background: rgba(74,222,128,0.1); color: #4ade80; border: 1px solid rgba(74,222,128,0.2); }
 .badge-amber { background: rgba(251,191,36,0.1); color: #fbbf24; border: 1px solid rgba(251,191,36,0.2); }
 
-.price-card h3 {
-  font-size: 18px;
-  font-weight: 500;
-  color: var(--text-1);
-  margin-bottom: 6px;
-  letter-spacing: -0.02em;
-}
-
-.price-card .desc {
-  font-size: 13px;
-  color: var(--text-3);
-  font-weight: 300;
-  line-height: 1.6;
-  margin-bottom: 24px;
-  min-height: 40px;
-}
-
-.price-num {
-  font-family: 'Instrument Serif', serif;
-  font-size: 36px;
-  color: var(--text-1);
-  line-height: 1;
-  margin-bottom: 2px;
-}
-
-.price-period {
-  font-size: 12px;
-  color: var(--text-3);
-  margin-bottom: 28px;
-}
+.price-card h3 { font-size: 18px; font-weight: 500; color: var(--text-1); margin-bottom: 6px; letter-spacing: -0.02em; }
+.price-card .desc { font-size: 13px; color: var(--text-3); font-weight: 300; line-height: 1.6; margin-bottom: 24px; min-height: 40px; }
+.price-num { font-family: 'Instrument Serif', serif; font-size: 36px; color: var(--text-1); line-height: 1; margin-bottom: 2px; }
+.price-period { font-size: 12px; color: var(--text-3); margin-bottom: 28px; }
 
 .price-features {
   list-style: none;
@@ -480,132 +392,41 @@ section { padding: 96px 6%; }
   gap: 10px;
 }
 
-.price-features li {
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-  font-size: 13px;
-  color: var(--text-2);
-  font-weight: 300;
-}
+.price-features li { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; color: var(--text-2); font-weight: 300; }
+.pf-check { width: 14px; height: 14px; flex-shrink: 0; margin-top: 2px; color: var(--blue); }
 
-.pf-check {
-  width: 14px;
-  height: 14px;
-  flex-shrink: 0;
-  margin-top: 2px;
-  color: var(--blue);
-}
-
-/* ── HOW ── */
 .how { background: var(--bg-2); }
 
-.steps {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0;
-  position: relative;
-}
-
-.step-connector {
-  position: absolute;
-  top: 19px;
-  left: calc(12.5% + 19px);
-  right: calc(12.5% + 19px);
-  height: 1px;
-  background: var(--border-2);
-}
-
-.step {
-  padding: 0 24px;
-  position: relative;
-}
-
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; }
+.step-connector { position: absolute; top: 19px; left: calc(12.5% + 19px); right: calc(12.5% + 19px); height: 1px; background: var(--border-2); }
+.step { padding: 0 24px; position: relative; }
 .step-n {
-  width: 38px;
-  height: 38px;
+  width: 38px; height: 38px;
   border-radius: 50%;
   background: var(--bg-3);
   border: 1px solid var(--border-2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--text-2);
-  margin-bottom: 20px;
-  position: relative;
-  z-index: 1;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 500; color: var(--text-2);
+  margin-bottom: 20px; position: relative; z-index: 1;
 }
+.step h4 { font-size: 15px; font-weight: 500; color: var(--text-1); margin-bottom: 8px; letter-spacing: -0.01em; }
+.step p { font-size: 13px; color: var(--text-3); line-height: 1.65; font-weight: 300; }
 
-.step h4 {
-  font-size: 15px;
-  font-weight: 500;
-  color: var(--text-1);
-  margin-bottom: 8px;
-  letter-spacing: -0.01em;
-}
-
-.step p {
-  font-size: 13px;
-  color: var(--text-3);
-  line-height: 1.65;
-  font-weight: 300;
-}
-
-/* ── CONTACT ── */
 .contact { background: var(--bg); }
-
-.contact-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: start;
-}
-
-.contact-left h2 {
-  font-size: clamp(28px, 3vw, 40px);
-  font-weight: 400;
-  margin-bottom: 16px;
-}
-
-.contact-left p {
-  font-size: 15px;
-  color: var(--text-2);
-  font-weight: 300;
-  line-height: 1.7;
-  margin-bottom: 36px;
-}
-
-.contact-items {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.contact-item {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  font-size: 14px;
-  color: var(--text-2);
-  font-weight: 300;
-}
-
+.contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+.contact-left h2 { font-size: clamp(28px, 3vw, 40px); font-weight: 400; margin-bottom: 16px; }
+.contact-left p { font-size: 15px; color: var(--text-2); font-weight: 300; line-height: 1.7; margin-bottom: 36px; }
+.contact-items { display: flex; flex-direction: column; gap: 16px; }
+.contact-item { display: flex; align-items: center; gap: 14px; font-size: 14px; color: var(--text-2); font-weight: 300; }
 .ci-icon {
-  width: 36px;
-  height: 36px;
+  width: 36px; height: 36px;
   background: var(--bg-3);
   border: 1px solid var(--border);
   border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  color: var(--text-2);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; color: var(--text-2);
 }
 
-/* FORM */
 .form-box {
   background: var(--bg-2);
   border: 1px solid var(--border);
@@ -613,32 +434,11 @@ section { padding: 96px 6%; }
   padding: 40px;
 }
 
-.form-box h3 {
-  font-size: 18px;
-  font-weight: 500;
-  color: var(--text-1);
-  margin-bottom: 6px;
-  letter-spacing: -0.02em;
-}
-
-.form-box .fsub {
-  font-size: 13px;
-  color: var(--text-3);
-  margin-bottom: 28px;
-  font-weight: 300;
-}
+.form-box h3 { font-size: 18px; font-weight: 500; color: var(--text-1); margin-bottom: 6px; letter-spacing: -0.02em; }
+.form-box .fsub { font-size: 13px; color: var(--text-3); margin-bottom: 28px; font-weight: 300; }
 
 .fg { margin-bottom: 14px; }
-
-.fg label {
-  display: block;
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-3);
-  margin-bottom: 7px;
-}
+.fg label { display: block; font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-3); margin-bottom: 7px; }
 
 .fg input, .fg select {
   width: 100%;
@@ -656,11 +456,7 @@ section { padding: 96px 6%; }
 }
 
 .fg input::placeholder { color: var(--text-3); }
-
-.fg input:focus, .fg select:focus {
-  border-color: rgba(47,110,245,0.4);
-}
-
+.fg input:focus, .fg select:focus { border-color: rgba(47,110,245,0.4); }
 .fg select option { background: var(--bg-3); color: var(--text-1); }
 
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
@@ -677,19 +473,45 @@ section { padding: 96px 6%; }
   border: none;
   cursor: pointer;
   margin-top: 6px;
-  transition: opacity 0.2s;
+  transition: opacity 0.2s, background 0.2s;
 }
 
 .form-submit:hover { opacity: 0.88; }
+.form-submit:disabled { opacity: 0.5; cursor: not-allowed; }
 
-.form-note {
-  font-size: 11px;
-  color: var(--text-3);
-  text-align: center;
-  margin-top: 12px;
+/* Toast notification */
+.toast {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: #1a2e1a;
+  border: 1px solid rgba(74,222,128,0.3);
+  color: #4ade80;
+  padding: 14px 24px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 9999;
+  opacity: 0;
+  transition: all 0.35s ease;
+  pointer-events: none;
+  white-space: nowrap;
 }
 
-/* ── FOOTER ── */
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.toast.error {
+  background: #2e1a1a;
+  border-color: rgba(239,68,68,0.3);
+  color: #f87171;
+}
+
+.form-note { font-size: 11px; color: var(--text-3); text-align: center; margin-top: 12px; }
+
 footer {
   background: var(--bg-2);
   border-top: 1px solid var(--border);
@@ -703,7 +525,6 @@ footer {
 
 .footer-copy { font-size: 12px; color: var(--text-3); }
 
-/* ── WA FLOAT ── */
 .wa-float {
   position: fixed;
   bottom: 28px; right: 28px;
@@ -712,9 +533,7 @@ footer {
   border-radius: 50%;
   background: #1a3a28;
   border: 1px solid rgba(74,222,128,0.25);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex; align-items: center; justify-content: center;
   text-decoration: none;
   transition: all 0.2s;
 }
@@ -722,11 +541,9 @@ footer {
 .wa-float:hover { background: #1f4530; transform: scale(1.06); }
 .wa-float svg { width: 22px; height: 22px; fill: #4ade80; }
 
-/* ── REVEAL ── */
 .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.55s ease, transform 0.55s ease; }
 .reveal.in { opacity: 1; transform: translateY(0); }
 
-/* ── RESPONSIVE ── */
 @media(max-width:900px){
   .nav-links { display: none; }
   section { padding: 72px 5%; }
@@ -744,6 +561,9 @@ footer {
 </style>
 </head>
 <body>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
 
 <!-- NAV -->
 <nav>
@@ -807,26 +627,11 @@ footer {
       <p>Analizamos tu sitio web desde adentro: arquitectura técnica, velocidad de carga, estructura de URLs, rastreo e indexación, y la calidad del contenido publicado. Identificamos por qué Google no te encuentra o por qué tus competidores te superan en los resultados orgánicos.</p>
       <p>El informe entregado no es una lista de errores — es un diagnóstico priorizado por impacto, con contexto de negocio y pasos claros para resolver cada punto.</p>
       <ul class="deliverables">
-        <li>
-          <svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>
-          Análisis técnico completo: Core Web Vitals, rastreo, indexación, errores
-        </li>
-        <li>
-          <svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>
-          Auditoría de contenido y estructura de keywords actuales
-        </li>
-        <li>
-          <svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>
-          Análisis de backlinks y autoridad de dominio
-        </li>
-        <li>
-          <svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>
-          Benchmarking contra 3 competidores directos
-        </li>
-        <li>
-          <svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>
-          Informe PDF con hallazgos priorizados + llamada de revisión
-        </li>
+        <li><svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>Análisis técnico completo: Core Web Vitals, rastreo, indexación, errores</li>
+        <li><svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>Auditoría de contenido y estructura de keywords actuales</li>
+        <li><svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>Análisis de backlinks y autoridad de dominio</li>
+        <li><svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>Benchmarking contra 3 competidores directos</li>
+        <li><svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>Informe PDF con hallazgos priorizados + llamada de revisión</li>
       </ul>
       <div class="service-price-block">
         <div>
@@ -857,33 +662,15 @@ footer {
     <div class="service-detail">
       <h3 class="serif">Auditoría Meta Ads</h3>
       <div class="tagline">Diagnóstico completo de campañas en Facebook e Instagram</div>
-      <p>Analizamos tu cuenta publicitaria de principio a fin: estructura de campañas, segmentación de audiencias, calidad de creatividades, coherencia entre el anuncio y la landing page, configuración del Pixel y atribución de conversiones. El informe no es una lista de observaciones — es un diagnóstico priorizado por impacto, con correcciones concretas para cada problema.</p>
-      <p>En la mayoría de las cuentas encontramos al menos uno de estos problemas críticos: Pixel mal configurado (las campañas optimizan por clics en lugar de leads), audiencias superpuestas que compiten entre sí, o creatividades que no responden al miedo o motivación real del segmento. Cualquiera de estos puede estar haciendo que tu presupuesto rinda a la mitad de lo que debería.</p>
+      <p>Analizamos tu cuenta publicitaria de principio a fin: estructura de campañas, segmentación de audiencias, calidad de creatividades, coherencia entre el anuncio y la landing page, configuración del Pixel y atribución de conversiones.</p>
+      <p>En la mayoría de las cuentas encontramos al menos uno de estos problemas críticos: Pixel mal configurado, audiencias superpuestas que compiten entre sí, o creatividades que no responden al miedo o motivación real del segmento.</p>
       <ul class="deliverables">
-        <li>
-          <svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>
-          Estructura completa: campañas, conjuntos de anuncios, creatividades y presupuestos
-        </li>
-        <li>
-          <svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>
-          Auditoría de Pixel: instalación, eventos de conversión (Lead, Contact, Purchase) y atribución
-        </li>
-        <li>
-          <svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>
-          Análisis de coherencia ad–landing: qué espera el usuario al hacer clic y qué encuentra
-        </li>
-        <li>
-          <svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>
-          Evaluación de hooks, copy y formatos: qué piezas funcionan y por qué las otras no
-        </li>
-        <li>
-          <svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>
-          Oportunidades de retargeting y segmentación sin explotar
-        </li>
-        <li>
-          <svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>
-          Informe con CPL/CPA real, plan de acción priorizado y llamada de revisión
-        </li>
+        <li><svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>Estructura completa: campañas, conjuntos de anuncios, creatividades y presupuestos</li>
+        <li><svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>Auditoría de Pixel: instalación, eventos de conversión y atribución</li>
+        <li><svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>Análisis de coherencia ad–landing</li>
+        <li><svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>Evaluación de hooks, copy y formatos</li>
+        <li><svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>Oportunidades de retargeting y segmentación sin explotar</li>
+        <li><svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>Informe con CPL/CPA real, plan de acción priorizado y llamada de revisión</li>
       </ul>
       <div class="service-price-block">
         <div>
@@ -898,7 +685,7 @@ footer {
       <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:32px">
         <div style="padding:12px 16px;background:var(--bg-4);border-radius:8px;font-size:13px;color:var(--text-2);font-weight:300;border-left:2px solid var(--blue)">Coherencia ad&thinsp;&harr;&thinsp;landing: nombre de marca, oferta, tono visual y próximo paso claro</div>
         <div style="padding:12px 16px;background:var(--bg-4);border-radius:8px;font-size:13px;color:var(--text-2);font-weight:300;border-left:2px solid var(--blue)">Copy de anuncios: si el hook responde al miedo o motivación real de tu segmento</div>
-        <div style="padding:12px 16px;background:var(--bg-4);border-radius:8px;font-size:13px;color:var(--text-2);font-weight:300;border-left:2px solid var(--blue)">CTAs: "Solicitar presupuesto" vs. "Presupuesto gratis en 2 minutos" — la diferencia importa</div>
+        <div style="padding:12px 16px;background:var(--bg-4);border-radius:8px;font-size:13px;color:var(--text-2);font-weight:300;border-left:2px solid var(--blue)">CTAs: "Solicitar presupuesto" vs. "Presupuesto gratis en 2 minutos"</div>
         <div style="padding:12px 16px;background:var(--bg-4);border-radius:8px;font-size:13px;color:var(--text-2);font-weight:300;border-left:2px solid var(--blue)">Social proof: testimonios reales, Google Reviews y métricas que generan confianza</div>
         <div style="padding:12px 16px;background:var(--bg-4);border-radius:8px;font-size:13px;color:var(--text-2);font-weight:300;border-left:2px solid var(--blue)">Oportunidades de retargeting: audiencias que visitaron tu sitio y no convirtieron</div>
       </div>
@@ -920,29 +707,14 @@ footer {
     <div class="service-detail">
       <h3 class="serif">Plan de acción</h3>
       <div class="tagline">Hoja de ruta de marketing con prioridades claras</div>
-      <p>Después de una auditoría —o a partir de una revisión general del negocio— entregamos un plan de acción estructurado: qué hacer primero, por qué, cómo medirlo y qué resultado esperar. No es una lista de tareas genéricas sino una guía construida sobre el contexto real de tu empresa.</p>
+      <p>Después de una auditoría —o a partir de una revisión general del negocio— entregamos un plan de acción estructurado: qué hacer primero, por qué, cómo medirlo y qué resultado esperar.</p>
       <p>Puede entregarse como servicio independiente o como continuación natural de cualquier auditoría.</p>
       <ul class="deliverables">
-        <li>
-          <svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>
-          Diagnóstico consolidado de situación actual
-        </li>
-        <li>
-          <svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>
-          Prioridades de acción por impacto y urgencia
-        </li>
-        <li>
-          <svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>
-          Estimaciones de inversión necesaria y resultados esperados
-        </li>
-        <li>
-          <svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>
-          KPIs de seguimiento y métricas de éxito por acción
-        </li>
-        <li>
-          <svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>
-          Sesión de presentación y revisión en conjunto
-        </li>
+        <li><svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>Diagnóstico consolidado de situación actual</li>
+        <li><svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>Prioridades de acción por impacto y urgencia</li>
+        <li><svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>Estimaciones de inversión necesaria y resultados esperados</li>
+        <li><svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>KPIs de seguimiento y métricas de éxito por acción</li>
+        <li><svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>Sesión de presentación y revisión en conjunto</li>
       </ul>
       <div class="service-price-block">
         <div>
@@ -974,26 +746,11 @@ footer {
       <p>Diseñamos e implementamos un agente conversacional con IA integrado a tu WhatsApp Business. El agente responde consultas frecuentes, califica leads, agenda turnos o citas, y deriva a un humano cuando es necesario — todo de forma automática, las 24 horas.</p>
       <p>El resultado es una experiencia de atención consistente y sin demoras, con un costo marginal cercano a cero por conversación.</p>
       <ul class="deliverables">
-        <li>
-          <svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>
-          Relevamiento de flujos de atención y preguntas frecuentes
-        </li>
-        <li>
-          <svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>
-          Diseño de conversaciones y árbol de decisiones
-        </li>
-        <li>
-          <svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>
-          Setup e integración con WhatsApp Business API
-        </li>
-        <li>
-          <svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>
-          Entrenamiento del agente con información del negocio
-        </li>
-        <li>
-          <svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>
-          Mantenimiento mensual, ajustes y reportes de actividad
-        </li>
+        <li><svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>Relevamiento de flujos de atención y preguntas frecuentes</li>
+        <li><svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>Diseño de conversaciones y árbol de decisiones</li>
+        <li><svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>Setup e integración con WhatsApp Business API</li>
+        <li><svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>Entrenamiento del agente con información del negocio</li>
+        <li><svg class="del-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>Mantenimiento mensual, ajustes y reportes de actividad</li>
       </ul>
       <div class="service-price-block">
         <div>
@@ -1026,7 +783,6 @@ footer {
   </div>
 
   <div class="reveal" style="background:var(--bg-3);border:1px solid var(--border);border-radius:16px;overflow:hidden">
-    <!-- Header del caso -->
     <div style="padding:28px 36px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px">
       <div>
         <div class="label" style="margin-bottom:6px">Caso real · Mayo 2026</div>
@@ -1038,59 +794,36 @@ footer {
         <span style="font-size:11px;padding:4px 12px;border:1px solid var(--border);border-radius:100px;color:var(--text-3)">Píxel & tracking</span>
       </div>
     </div>
-
-    <!-- Scores -->
     <div style="padding:28px 36px;border-bottom:1px solid var(--border);display:grid;grid-template-columns:repeat(6,1fr);gap:12px">
-      <div style="text-align:center">
-        <div style="font-family:'Instrument Serif',serif;font-size:28px;color:#ef4444;line-height:1">4<span style="font-size:14px;color:var(--text-3)">/10</span></div>
-        <div style="font-size:10px;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin-top:4px">Coherencia ad–landing</div>
-      </div>
-      <div style="text-align:center">
-        <div style="font-family:'Instrument Serif',serif;font-size:28px;color:#f59e0b;line-height:1">5<span style="font-size:14px;color:var(--text-3)">/10</span></div>
-        <div style="font-size:10px;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin-top:4px">Copy y mensajes</div>
-      </div>
-      <div style="text-align:center">
-        <div style="font-family:'Instrument Serif',serif;font-size:28px;color:#f59e0b;line-height:1">5<span style="font-size:14px;color:var(--text-3)">/10</span></div>
-        <div style="font-size:10px;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin-top:4px">Estructura landing</div>
-      </div>
-      <div style="text-align:center">
-        <div style="font-family:'Instrument Serif',serif;font-size:28px;color:#ef4444;line-height:1">2<span style="font-size:14px;color:var(--text-3)">/10</span></div>
-        <div style="font-size:10px;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin-top:4px">Social proof</div>
-      </div>
-      <div style="text-align:center">
-        <div style="font-family:'Instrument Serif',serif;font-size:28px;color:#22c55e;line-height:1">7<span style="font-size:14px;color:var(--text-3)">/10</span></div>
-        <div style="font-size:10px;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin-top:4px">Servicios y claridad</div>
-      </div>
-      <div style="text-align:center">
-        <div style="font-family:'Instrument Serif',serif;font-size:28px;color:#ef4444;line-height:1">4<span style="font-size:14px;color:var(--text-3)">/10</span></div>
-        <div style="font-size:10px;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin-top:4px">Conversión</div>
-      </div>
+      <div style="text-align:center"><div style="font-family:'Instrument Serif',serif;font-size:28px;color:#ef4444;line-height:1">4<span style="font-size:14px;color:var(--text-3)">/10</span></div><div style="font-size:10px;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin-top:4px">Coherencia ad–landing</div></div>
+      <div style="text-align:center"><div style="font-family:'Instrument Serif',serif;font-size:28px;color:#f59e0b;line-height:1">5<span style="font-size:14px;color:var(--text-3)">/10</span></div><div style="font-size:10px;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin-top:4px">Copy y mensajes</div></div>
+      <div style="text-align:center"><div style="font-family:'Instrument Serif',serif;font-size:28px;color:#f59e0b;line-height:1">5<span style="font-size:14px;color:var(--text-3)">/10</span></div><div style="font-size:10px;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin-top:4px">Estructura landing</div></div>
+      <div style="text-align:center"><div style="font-family:'Instrument Serif',serif;font-size:28px;color:#ef4444;line-height:1">2<span style="font-size:14px;color:var(--text-3)">/10</span></div><div style="font-size:10px;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin-top:4px">Social proof</div></div>
+      <div style="text-align:center"><div style="font-family:'Instrument Serif',serif;font-size:28px;color:#22c55e;line-height:1">7<span style="font-size:14px;color:var(--text-3)">/10</span></div><div style="font-size:10px;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin-top:4px">Servicios y claridad</div></div>
+      <div style="text-align:center"><div style="font-family:'Instrument Serif',serif;font-size:28px;color:#ef4444;line-height:1">4<span style="font-size:14px;color:var(--text-3)">/10</span></div><div style="font-size:10px;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin-top:4px">Conversión</div></div>
     </div>
-
-    <!-- Hallazgos -->
     <div style="padding:28px 36px;display:grid;grid-template-columns:1fr 1fr;gap:16px">
       <div style="background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.15);border-radius:10px;padding:20px 24px">
         <div style="font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:#ef4444;margin-bottom:10px">Problema crítico</div>
         <div style="font-size:14px;font-weight:500;color:var(--text-1);margin-bottom:8px">Identidad de marca fragmentada</div>
-        <div style="font-size:13px;color:var(--text-2);font-weight:300;line-height:1.65">El negocio opera con dos nombres distintos en Facebook y en su sitio web. Un usuario que hace clic en el anuncio y llega a la landing siente que aterrizó en un lugar diferente. Esto destruye la confianza antes de leer una sola línea — y reduce artificialmente la tasa de conversión de todas las campañas.</div>
+        <div style="font-size:13px;color:var(--text-2);font-weight:300;line-height:1.65">El negocio opera con dos nombres distintos en Facebook y en su sitio web. Un usuario que hace clic en el anuncio y llega a la landing siente que aterrizó en un lugar diferente. Esto destruye la confianza antes de leer una sola línea.</div>
       </div>
       <div style="background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.15);border-radius:10px;padding:20px 24px">
         <div style="font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:#ef4444;margin-bottom:10px">Problema crítico</div>
         <div style="font-size:14px;font-weight:500;color:var(--text-1);margin-bottom:8px">Pixel sin eventos configurados</div>
-        <div style="font-size:13px;color:var(--text-2);font-weight:300;line-height:1.65">El CTA principal lleva a WhatsApp, pero ese clic no está registrado como evento de conversión. Sin el evento "Contact" configurado, las campañas optimizan por clics en lugar de leads — la peor configuración posible en términos de eficiencia de presupuesto.</div>
+        <div style="font-size:13px;color:var(--text-2);font-weight:300;line-height:1.65">El CTA principal lleva a WhatsApp, pero ese clic no está registrado como evento de conversión. Sin el evento "Contact" configurado, las campañas optimizan por clics en lugar de leads.</div>
       </div>
       <div style="background:rgba(245,158,11,0.06);border:1px solid rgba(245,158,11,0.15);border-radius:10px;padding:20px 24px">
         <div style="font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:#f59e0b;margin-bottom:10px">Oportunidad</div>
         <div style="font-size:14px;font-weight:500;color:var(--text-1);margin-bottom:8px">Diferenciador enterrado</div>
-        <div style="font-size:13px;color:var(--text-2);font-weight:300;line-height:1.65">El servicio de instalación llave en mano (mudanza + aires + electricidad + pintura) no lo ofrece casi ningún competidor directo. Está mencionado en el fondo de la página con un nombre que no comunica nada. Construir toda la estrategia alrededor de este diferenciador puede justificar un precio premium.</div>
+        <div style="font-size:13px;color:var(--text-2);font-weight:300;line-height:1.65">El servicio de instalación llave en mano no lo ofrece casi ningún competidor directo. Está mencionado al fondo de la página con un nombre que no comunica nada. Construir la estrategia alrededor de este diferenciador puede justificar un precio premium.</div>
       </div>
       <div style="background:rgba(245,158,11,0.06);border:1px solid rgba(245,158,11,0.15);border-radius:10px;padding:20px 24px">
         <div style="font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:#f59e0b;margin-bottom:10px">Oportunidad</div>
         <div style="font-size:14px;font-weight:500;color:var(--text-1);margin-bottom:8px">Retargeting sin activar</div>
-        <div style="font-size:13px;color:var(--text-2);font-weight:300;line-height:1.65">No hay audiencias de retargeting configuradas. Con el Pixel activo, se puede mostrar un anuncio diferente (con urgencia o garantía) a quienes ya visitaron la página sin convertir. Esto típicamente reduce el costo por lead entre un 40 y un 60%.</div>
+        <div style="font-size:13px;color:var(--text-2);font-weight:300;line-height:1.65">No hay audiencias de retargeting configuradas. Con el Pixel activo, se puede mostrar un anuncio diferente a quienes ya visitaron la página sin convertir. Esto típicamente reduce el costo por lead entre un 40 y un 60%.</div>
       </div>
     </div>
-
     <div style="padding:20px 36px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
       <div style="font-size:12px;color:var(--text-3)">El informe completo incluye 9 páginas con análisis de copy, tabla de coherencia ad–landing, correcciones específicas y plan de acción priorizado.</div>
       <a href="#contacto" class="btn btn-primary" style="font-size:13px;padding:10px 22px">Quiero una auditoría así</a>
@@ -1121,7 +854,6 @@ footer {
         <li><svg class="pf-check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>Entrega en 5–7 días</li>
       </ul>
     </div>
-
     <div class="price-card featured">
       <div class="price-card-badge badge-blue">Portfolio Pack</div>
       <h3>SEO + Meta + Plan</h3>
@@ -1136,7 +868,6 @@ footer {
         <li><svg class="pf-check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3,8 6,11 13,4"/></svg>Entrega en 7–10 días</li>
       </ul>
     </div>
-
     <div class="price-card">
       <div class="price-card-badge badge-amber">Pago único</div>
       <h3>Auditoría Meta Ads</h3>
@@ -1153,7 +884,6 @@ footer {
     </div>
   </div>
 
-  <!-- Retainer row -->
   <div style="margin-top:2px;background:var(--bg-2);border:1px solid var(--border);border-radius:12px;padding:32px 36px;display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:24px;align-items:center" class="reveal">
     <div>
       <div class="label" style="margin-bottom:8px">Servicios recurrentes</div>
@@ -1184,7 +914,6 @@ footer {
     <h2 class="serif">Cómo trabajamos</h2>
     <p>Sin reuniones interminables ni procesos de agencia. En menos de una semana tenés claridad total sobre tu situación.</p>
   </div>
-
   <div class="steps reveal" style="position:relative">
     <div class="step-connector"></div>
     <div class="step">
@@ -1228,9 +957,9 @@ footer {
           <div class="ci-icon">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M13.5 10.5c-.5-.5-1.5-1-2-1s-1 .5-1.5 1c-.5.5-1 .5-1.5.5C7 11 4.5 8.5 4.5 7c0-.5 0-1 .5-1.5C5.5 5 6 4.5 6 4s-.5-1.5-1-2C4.5 1.5 4 1.5 3.5 2l-.5.5C2 3.5 2 5 2.5 6.5 3 8 4.5 10 6 11.5c1.5 1.5 3.5 3 5 3.5 1.5.5 3 .5 4-1l.5-.5c.5-.5.5-1 0-1.5z"/></svg>
           </div>
-          +54 9 11 0000-0000
+          +54 9 11 7363-0531
         </div>
-        <a href="https://wa.me/5491100000000" class="btn btn-wa" style="width:fit-content;margin-top:8px">
+        <a href="https://wa.me/5491173630531" class="btn btn-wa" style="width:fit-content;margin-top:8px">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           Escribir por WhatsApp
         </a>
@@ -1244,24 +973,24 @@ footer {
         <div class="form-row">
           <div class="fg">
             <label>Nombre</label>
-            <input type="text" placeholder="Tu nombre">
+            <input type="text" id="f-nombre" placeholder="Tu nombre">
           </div>
           <div class="fg">
             <label>Empresa</label>
-            <input type="text" placeholder="Nombre del negocio">
+            <input type="text" id="f-empresa" placeholder="Nombre del negocio">
           </div>
         </div>
         <div class="fg">
           <label>Email</label>
-          <input type="email" placeholder="tu@empresa.com">
+          <input type="email" id="f-email" placeholder="tu@empresa.com">
         </div>
         <div class="fg">
           <label>WhatsApp</label>
-          <input type="tel" placeholder="+54 9 11 0000 0000">
+          <input type="tel" id="f-whatsapp" placeholder="+54 9 11 7363 0531">
         </div>
         <div class="fg">
           <label>¿En qué podemos ayudarte?</label>
-          <select>
+          <select id="f-servicio">
             <option value="" disabled selected>Seleccioná una opción</option>
             <option>Mejorar mi posicionamiento en Google (SEO)</option>
             <option>Optimizar mis campañas de Meta Ads</option>
@@ -1270,7 +999,7 @@ footer {
             <option>Pack completo (SEO + Meta + Plan)</option>
           </select>
         </div>
-        <button class="form-submit">Enviar solicitud</button>
+        <button class="form-submit" id="btn-submit">Enviar solicitud</button>
         <p class="form-note">Sin spam. Sin compromiso. Respondemos en menos de 24 hs.</p>
       </div>
     </div>
@@ -1281,30 +1010,100 @@ footer {
 <footer>
   <a href="#" class="logo">Scalix<span class="logo-dot">.</span></a>
   <p class="footer-copy">© 2025 Scalix · Marketing Digital · Buenos Aires</p>
-  <a href="https://wa.me/5491100000000" class="btn btn-wa" style="font-size:13px;padding:9px 18px">
+  <a href="https://wa.me/5491173630531" class="btn btn-wa" style="font-size:13px;padding:9px 18px">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     WhatsApp
   </a>
 </footer>
 
 <!-- WA FLOAT -->
-<a href="https://wa.me/5491100000000" class="wa-float" title="WhatsApp">
+<a href="https://wa.me/5491173630531" class="wa-float" title="WhatsApp">
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
 <script>
-// Meta Pixel events
+// ── TOAST HELPER ──
+function showToast(msg, type = 'success') {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast' + (type === 'error' ? ' error' : '');
+  void t.offsetWidth;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 4000);
+}
+
+// ── FORM SUBMIT: EmailJS + WhatsApp ──
+document.getElementById('btn-submit').addEventListener('click', async () => {
+  const nombre   = document.getElementById('f-nombre').value.trim();
+  const empresa  = document.getElementById('f-empresa').value.trim();
+  const email    = document.getElementById('f-email').value.trim();
+  const whatsapp = document.getElementById('f-whatsapp').value.trim();
+  const servicio = document.getElementById('f-servicio').value;
+
+  // Validación mínima
+  if (!nombre || !email) {
+    showToast('Completá al menos nombre y email.', 'error');
+    return;
+  }
+
+  const btn = document.getElementById('btn-submit');
+  btn.disabled = true;
+  btn.textContent = 'Enviando...';
+
+  // 1. Pixel Lead
+  if (typeof fbq !== 'undefined') fbq('track', 'Lead');
+
+  // 2. EmailJS
+  try {
+    await emailjs.send('service_0f1yzbt', 'template_iz3dgkf', {
+      nombre,
+      empresa:  empresa  || '—',
+      email,
+      whatsapp: whatsapp || '—',
+      servicio: servicio || '—'
+    });
+  } catch(err) {
+    console.error('EmailJS error:', err);
+    showToast('Hubo un error al enviar. Escribinos por WhatsApp.', 'error');
+    btn.disabled = false;
+    btn.textContent = 'Enviar solicitud';
+    return;
+  }
+
+  // 3. Abrir WhatsApp con datos pre-cargados
+  const waNum = '5491173630531'; // ← reemplazá con tu número real
+  const msg = encodeURIComponent(
+    `Hola Scalix! Completé el formulario de la web.\n\n` +
+    `*Nombre:* ${nombre}\n` +
+    `*Empresa:* ${empresa || '—'}\n` +
+    `*Email:* ${email}\n` +
+    `*WhatsApp:* ${whatsapp || '—'}\n` +
+    `*Servicio:* ${servicio || '—'}`
+  );
+  window.open(`https://wa.me/${waNum}?text=${msg}`, '_blank');
+
+  // 4. Feedback visual + reset
+  showToast('✓ Solicitud enviada. Abrimos WhatsApp para continuar.');
+  btn.textContent = '✓ Enviado';
+  setTimeout(() => {
+    btn.disabled = false;
+    btn.textContent = 'Enviar solicitud';
+    // Limpiar campos
+    ['f-nombre','f-empresa','f-email','f-whatsapp'].forEach(id => {
+      document.getElementById(id).value = '';
+    });
+    document.getElementById('f-servicio').selectedIndex = 0;
+  }, 3000);
+});
+
+// ── PIXEL: clics a WhatsApp ──
 document.querySelectorAll('a[href*="wa.me"]').forEach(el => {
   el.addEventListener('click', () => {
-    if(typeof fbq !== 'undefined') fbq('track', 'Contact');
+    if (typeof fbq !== 'undefined') fbq('track', 'Contact');
   });
 });
 
-document.querySelector('.form-submit').addEventListener('click', () => {
-  if(typeof fbq !== 'undefined') fbq('track', 'Lead');
-});
-
-// Tabs
+// ── TABS ──
 document.querySelectorAll('.stab').forEach(btn => {
   btn.addEventListener('click', () => {
     const panel = btn.dataset.panel;
@@ -1315,7 +1114,7 @@ document.querySelectorAll('.stab').forEach(btn => {
   });
 });
 
-// Reveal on scroll
+// ── REVEAL ON SCROLL ──
 const obs = new IntersectionObserver(entries => {
   entries.forEach((e, i) => {
     if (e.isIntersecting) setTimeout(() => e.target.classList.add('in'), i * 70);
